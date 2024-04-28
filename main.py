@@ -1,24 +1,40 @@
 from tkinter import *
-from tkinter import ttk
+root = Tk()
 #setup
-r = Tk()
-r.geometry("600x800")
-r.title('Calculator')
-#buttons
-button1 = Button(r, text='1', width=13, height=6).place(x=150, y=355)
-button2 = Button(r, text='2', width=13, height=6).place(x=250, y=355)
-button3 = Button(r, text='3', width=13, height=6).place(x=350, y=355)
-button4 = Button(r, text='4', width=13, height=6).place(x=150, y=455)
-button5 = Button(r, text='5', width=13, height=6).place(x=250, y=455)
-button6 = Button(r, text='6', width=13, height=6).place(x=350, y=455)
-button7 = Button(r, text='7', width=13, height=6).place(x=150, y=555)
-button8 = Button(r, text='8', width=13, height=6).place(x=250, y=555)
-button9 = Button(r, text='9', width=13, height=6).place(x=350, y=555)
-button0 = Button(r, text='0', width=13, height=6).place(x=250, y=655)
-buttonAdd = Button(r, text='+', width=8, height=3).place(x=500, y=355)
-buttonSub = Button(r, text='-', width=8, height=3).place(x=500, y=455)
-buttonMult = Button(r, text='X', width=8, height=3).place(x=500, y=555)
-buttonDiv = Button(r, text='/', width=8, height=3).place(x=500, y=655)
-#functions
+class BuildCalc():
+    def __init__(self, parent):
+        self.parent = parent
+        self.parent.geometry("600x800")
+        self.parent.title('Calculator')
+        self.parent.grid()
+        self.CreateFrame()
+        self.AddButtons()
+    def CreateFrame(self):
+        self.Frm = Frame(self.parent)
+        self.Frm.grid(row = 0, column = 0)
+    #buttons
+    def AddButtons(self):
+        self.bttn1 = Button(self.Frm, text='1', width=13, height=6)
+        self.bttn2 = Button(self.Frm, text='2', width=13, height=6)
+        self.bttn3 = Button(self.Frm, text='3', width=13, height=6)
+        self.bttn4 = Button(self.Frm, text='4', width=13, height=6)
+        self.bttn5 = Button(self.Frm, text='5', width=13, height=6)
+        self.bttn6 = Button(self.Frm, text='6', width=13, height=6)
+        self.bttn7 = Button(self.Frm, text='7', width=13, height=6)
+        self.bttn8 = Button(self.Frm, text='8', width=13, height=6)
+        self.bttn9 = Button(self.Frm, text='9', width=13, height=6)
+        self.bttn0 = Button(self.Frm, text='0', width=13, height=6)
+        self.bttnAdd = Button(self.Frm, text='+', width=8, height=3)
+        self.bttnSub = Button(self.Frm, text='-', width=8, height=3)
+        self.bttnMult = Button(self.Frm, text='X', width=8, height=3)
+        self.bttnDiv = Button(self.Frm, text='/', width=8, height=3)
 
-r.mainloop()
+    #def Pressed1(self):
+
+
+
+
+
+#run
+buildcalc = BuildCalc(root)
+root.mainloop()
